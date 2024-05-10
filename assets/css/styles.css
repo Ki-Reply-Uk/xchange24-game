@@ -75,6 +75,29 @@ img {
   height: auto;
 }
 
+.btn {
+  padding: 10px 20px;
+  background-color: hsl(268, 58%, 48%);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn1 {
+  padding: 10px 20px;
+  background-color: hsl(268, 58%, 48%);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.highlight
+{
+  background-color: yellow;
+}
+
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1120px;
@@ -147,6 +170,12 @@ img {
   margin-bottom: 1.25rem;
 }
 
+.home__description1
+{
+  line-height: 100%;
+  margin-bottom: 1.25rem;
+}
+
 .home__button{
   display: inline-block;
   background : linear-gradient(180deg,
@@ -192,7 +221,9 @@ img {
 
 .home__rocket
 {
-  width: 220px;
+  left:15;
+  width: 210px;
+  transform: rotate(45deg);
 }
 
 .home__planet-1

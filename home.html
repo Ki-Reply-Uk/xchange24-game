@@ -3,7 +3,7 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+      <meta http-equiv="refresh" content="5" />
       <!--=============== FAVICON ===============-->
       <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
 
@@ -19,25 +19,36 @@
          <section class="home">
             <div class="home_container container">
                <div class="home__content float_child">
-                  <h3 class="home__subtitle">
-                     NAVIGATE THE UNIVERSE
-                  </h3>
-                  <h1 class="home__title">
-                     <span>
-                        Start Exploring <br>
-                        Infinite Space
-                     </span>
-
-                     <img src="assets/img/line.svg" alt="">
-                  </h1>
-                  <p class="home__description">
-                     Start your exploration in space, navigate 
-                     and discover all the wonders of the 
-                     universe. 
-                  </p>
-
+                  <button class="btn" onclick="increaseSpeed()">Distance to Earth</button>
+                  <button class="btn" onclick="decreaseSpeed()">Level of oxygen</button>
+                  <button class="btn" onclick="increaseAltitude()">Level of Fuel</button>
+                  <button class="btn1" onclick="decreaseAltitude()"><span class="highlight">Altitude</span></button>
+                  <ul> <span style="text-decoration: underline;">Instructions:</span>
+                     <li class="home__description1">
+                        1. Run safety check for Ki Spaceship to be cleared for take off
+                     </li>
+                     <li class="home__description1">
+                        2. Check fuel levels in engine are full
+                     </li>
+                     <li class="home__description1" style="text-align: right;text-decoration: line-through;">
+                        3. Check booster rockets are fully charged
+                     </li>
+                     <li class="home__description1">
+                        4. Check the navigation system to have clear flight path to Home on Planet Earth
+                     </li>
+                     <li class="home__description1">
+                        5. Switch on super beam lights
+                     </li>
+                     <li class="home__description1">
+                        6. Start the ignition for launch boosters
+                     </li>
+                     <li class="home__description1">
+                        7. LAUNCH
+                     </li>
+                  </ul>
+                  <br>
                   <a href="javascript:alert('Welcome! Page is under construction!!')" class="home__button">
-                     Get Started
+                     Dechrau arni
                   </a>
                </div>
                <div class="home__images float_child">
@@ -47,16 +58,7 @@
                   <img src="assets/img/rocket.svg" alt="image" class="home__rocket">
               </div>
             </div>
-            <div class="about__img">
-               <p class="home__description">
-                  Check the Interior of the spaceship 
-               </p>
-            <div class="about__img-overlay">
-            <img src="assets/img/image.png" alt="" class="about__img-one">
-            </div>
-            <div class="about__img-overlay">
-            <img src="assets/img/spaceship 2d 5.jpg" alt="" class="about__img-two">  
-            </div>
+           
          </div>
             <!-- <img src="assets/img/clouds-1.svg" alt="image" class="home__cloud-1">
             <img src="assets/img/clouds-2.svg" alt="image" class="home__cloud-2"> -->
