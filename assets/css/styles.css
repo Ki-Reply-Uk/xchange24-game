@@ -223,7 +223,8 @@ img {
 {
   left:15;
   width: 210px;
-  transform: rotate(45deg);
+  transform: rotate(0deg);
+  animation: rotation 5s infinite linear;
 }
 
 .home__planet-1
@@ -430,5 +431,17 @@ img {
     width: 130px;
     right:2rem;
     top: 2rem;
+  }
+}
+.rotate {
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
   }
 }
