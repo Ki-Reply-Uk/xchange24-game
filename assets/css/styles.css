@@ -82,6 +82,12 @@ img {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+ .btn1:hover {
+   background-color: hsl(268, 58%, 58%);
+ }
+.btn:hover {
+  background-color: hsl(268, 58%, 58%);
+}
 }
 
 .btn1 {
@@ -91,6 +97,12 @@ img {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+ .btn1:hover {
+   background-color: hsl(268, 58%, 58%);
+ }
+.btn:hover {
+  background-color: hsl(268, 58%, 58%);
+}
 }
 
 .highlight
