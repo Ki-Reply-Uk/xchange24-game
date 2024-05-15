@@ -223,7 +223,7 @@ img {
 {
   left:15;
   width: 210px;
-  transform: rotate(45deg);
+  transform: rotate(-45deg);
 }
 
 .home__planet-1
