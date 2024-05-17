@@ -76,18 +76,9 @@ img {
   height: auto;
 }
 
-.btn {
+.btn, .btn1 {
   padding: 10px 20px;
-  background-color: hsl(268, 58%, 48%);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.btn1 {
-  padding: 10px 20px;
-  background-color: hsl(268, 58%, 48%);
+  background-color: var(--first-color); /* Use CSS variable for consistency */
   color: white;
   border: none;
   border-radius: 5px;
