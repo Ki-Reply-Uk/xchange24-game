@@ -221,9 +221,9 @@ img {
 
 .home__rocket
 {
-  left:15;
+  left: 15px;
   width: 210px;
-  transform: rotate(45deg);
+  transform: rotate(0deg);
 }
 
 .home__planet-1
