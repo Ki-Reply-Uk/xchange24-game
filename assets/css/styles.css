@@ -432,3 +432,15 @@ img {
     top: 2rem;
   }
 }
+.home__rocket {
+  animation: rotateRocket 10s linear infinite;
+}
+
+@keyframes rotateRocket {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
