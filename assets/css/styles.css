@@ -53,7 +53,7 @@ body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   font-weight: var(--font-medium);
-  background-color: yellow; /* Changed to user's preference */
+  background-color: black; /* Changed to user's preference for nighttime browsing */
   color: var(--text-color);
 }
 
