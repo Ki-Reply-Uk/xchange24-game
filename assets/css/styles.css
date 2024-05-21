@@ -13,7 +13,7 @@
   --second-color-alt: hsl(328, 78%, 38%);
   --title-color: hsl(0, 0%, 100%);
   --text-color: hsl(252, 100%, 87%);
-  --body-color: hsl(0, 0%, 0%);
+  --body-color: hsl(240, 100%, 50%); /* Blue background */
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
