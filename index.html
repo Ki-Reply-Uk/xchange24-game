@@ -311,3 +311,21 @@
         </script>
     </body>
 </html>
+<button id="translateBtn" class="btn btn-xl btn-sf btnInstruct">Translate to English</button>
+<script>
+    document.getElementById('translateBtn').addEventListener('click', function() {
+        var elements = document.querySelectorAll('[data-lang-welsh], [data-lang-english]');
+        elements.forEach(function(el) {
+            if (el.getAttribute('data-lang-welsh')) {
+                el.textContent = el.getAttribute('data-lang-english');
+                el.setAttribute('data-lang-english', el.getAttribute('data-lang-welsh'));
+                el.removeAttribute('data-lang-welsh');
+            } else if (el.getAttribute('data-lang-english')) {
+                el.textContent = el.getAttribute('data-lang-welsh');
+                el.setAttribute('data-lang-welsh', el.getAttribute('data-lang-english'));
+                el.removeAttribute('data-lang-english');
+            }
+        });
+        this.textContent = this.textContent === 'Translate to English' ? 'Translate to Welsh' : 'Translate to English';
+    });
+</script>
