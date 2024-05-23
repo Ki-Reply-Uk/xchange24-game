@@ -445,4 +445,8 @@ input[type="email"] {
 .items-push > div { margin-bottom: 30px; }
 
 .overflow-hidden { overflow: hidden; }
-.visibility-hidden { visibility: hidden; }
+.visibility-hidden { visibility: hidden; }.popUpButton,
+.btn.btn-sf,
+.btnInstruct {
+    user-select: none; /* Prevent text selection */
+}
