@@ -69,7 +69,6 @@ ul span{
 
 .btn.btn-sf:hover,
 .btn.btn-sf:focus {
-    color: rgba(255, 255, 255, 1);
     border-color: rgba(255, 255, 255, 1);
     outline: 0;
 }
@@ -381,6 +380,7 @@ input[type="email"] {
 
 .popUpButton:hover {
     background-color: lightgray;
+    color: white;
 }
 
 /* Easy Pie Chart */
