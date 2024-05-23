@@ -38,7 +38,7 @@
                         <label for="email">Email:</label>
                         <input type="email" id="email" name="email" required>
     
-                        <button id="btnStartGame" type="button" class="popUpButton">Start Game</button>
+                        <button id="btnStartGame" type="button" class="popUpButton" data-en="Start Game" data-cy="Dechrau GÃªm">Start Game</button>
                     </form>
                 </div>
             </div>
@@ -147,7 +147,7 @@
                                    7. Launch
                                 </li>
                              </ul>
-                             <button class="btn btn-xl btn-sf btnInstruct">cadarnhau cyfarwyddiadau</button>
+                             <button class="btn btn-xl btn-sf btnInstruct" id="confirmInstructionsBtn">Confirm Instructions</button>
                             </div>
                         </div>
                         <div class="col-xs-6" style="padding-top:20px;width:100% !important">
@@ -313,3 +313,33 @@
         </script>
     </body>
 </html>
+        <script>
+            // Function to update button texts based on language selection
+            function updateLanguage(lang) {
+                document.querySelectorAll('[data-en]').forEach(el => {
+                    el.textContent = lang === 'cy' ? el.getAttribute('data-cy') : el.getAttribute('data-en');
+                });
+            }
+
+            // Example usage: updateLanguage('en'); // Set to 'cy' for Welsh
+        </script>
+        <script>
+            // Function to update button texts based on language selection
+            function updateLanguage(lang) {
+                document.querySelectorAll('[data-en]').forEach(el => {
+                    el.textContent = lang === 'cy' ? el.getAttribute('data-cy') : el.getAttribute('data-en');
+                });
+            }
+
+            // Example usage: updateLanguage('en'); // Set to 'cy' for Welsh
+        </script>
+        <script>
+            // Function to update button texts based on language selection
+            function updateLanguage(lang) {
+                document.querySelectorAll('[data-en]').forEach(el => {
+                    el.textContent = lang === 'cy' ? el.getAttribute('data-cy') : el.getAttribute('data-en');
+                });
+            }
+
+            // Example usage: updateLanguage('en'); // Set to 'cy' for Welsh
+        </script>
