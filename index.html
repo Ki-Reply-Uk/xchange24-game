@@ -31,13 +31,13 @@
                     <form id="contactForm">
                         <label for="name">Name:</label>
                         <input type="text" id="name" name="name" required>
-    
+
                         <label for="company">Company Name:</label>
                         <input type="text" id="company" name="company" required>
-    
+
                         <label for="email">Email:</label>
                         <input type="email" id="email" name="email" required>
-    
+
                         <button id="btnStartGame" type="button" class="popUpButton">Start Game</button>
                     </form>
                 </div>
@@ -73,6 +73,7 @@
                     <div class="text-crystal font-w300">GAMER_LOGGED_IN</div>
                     <div id="gamerName" class="text-success animated infinite pulse pull-right"></div>
                 </div>
+                <button id="toggleBackground" class="btn btn-sf">Toggle Background</button>
                 <h1 class="h3 font-w200">
                     <span class="text-crystal">//</span> <span class="text-header font-w300">SPACECRAFT DASHBOARD</span>
                 </h1>
@@ -83,7 +84,7 @@
             <main id="page-main">
                 <!-- Columns -->
                 <div class="row">
-                     
+
                     <div class="col-lg-6 col-lg-push-3 overflow-hidden push-20">
                         <div class="box-container">
                             <div class="box box1"> 
@@ -151,7 +152,7 @@
                             </div>
                         </div>
                         <div class="col-xs-6" style="padding-top:20px;width:100% !important">
-                           
+
                         </div>
                     </div>
                     <!-- Left Column -->
@@ -282,34 +283,37 @@
         <!-- Page JS Code -->
         <script>
             jQuery(function(){
+                $('#toggleBackground').click(function() {
+                    $('body').toggleClass('dark-mode');
+                });
 
-                Exchange.initHelpers(['easy-pie-chart']);
-          
-                $('#bugCount').text(Exchange.bugLeft);
+                    Exchange.initHelpers(['easy-pie-chart']);
 
-                if(localStorage.getItem('targetTime') == undefined && !Exchange.gameOver && !Exchange.userWon)
-                {
-                    Exchange.newGamePopup();
-                }
-                
-                if(localStorage.getItem('targetTime') !== null && !Exchange.userWon)
-                {
-                    Exchange.updateTimer();
-                }
+                    $('#bugCount').text(Exchange.bugLeft);
 
-                if(localStorage.getItem('targetTime') !== null && Exchange.userWon)
-                {
-                    Exchange.pauseCounter();
-                    Exchange.gameWonModal();
-                }
+                    if(localStorage.getItem('targetTime') == undefined && !Exchange.gameOver && !Exchange.userWon)
+                    {
+                        Exchange.newGamePopup();
+                    }
 
-                if(Exchange.gameOver)
-                {
-                    Exchange.gameOverPopUp();
-                    localStorage.clear();
-                }              
-            });
-             
-        </script>
-    </body>
-</html>
+                    if(localStorage.getItem('targetTime') !== null && !Exchange.userWon)
+                    {
+                        Exchange.updateTimer();
+                    }
+
+                    if(localStorage.getItem('targetTime') !== null && Exchange.userWon)
+                    {
+                        Exchange.pauseCounter();
+                        Exchange.gameWonModal();
+                    }
+
+                    if(Exchange.gameOver)
+                    {
+                        Exchange.gameOverPopUp();
+                        localStorage.clear();
+                    }              
+                });
+
+            </script>
+        </body>
+    </html>

@@ -12,6 +12,12 @@ body {
     background-repeat: no-repeat;
 }
 
+.dark-mode {
+    background-color: #000;
+    background-image: none;
+    color: #fff;
+}
+
 h1, h2, h3, .h1, .h2, .h3, .heading {
     font-family: 'Raleway', sans-serif;
     margin: 0;
