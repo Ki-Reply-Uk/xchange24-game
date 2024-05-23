@@ -218,7 +218,7 @@ socket.onmessage = function(event) {
     console.log('Message from server: ', event.data);
     if (event.data === "hard_refresh") {
         console.log('Performing hard refresh');
-        location.reload(true); // Forces a hard refresh
+        window.location.href=window.location.href
         console.log('Hard refresh complete');
     }
 };
