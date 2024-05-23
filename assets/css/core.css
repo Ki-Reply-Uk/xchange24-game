@@ -232,25 +232,25 @@ ul span{
     background-repeat: no-repeat;
     clear: both;
     background-image: url(../img/00.png);
-    transform:rotate(360deg)
+    transform:rotate(180deg)
 }
 #second
 {
     background-repeat: no-repeat;
     background-image: url(../img/10.png);
-    transform:rotate(270deg)
+    transform:rotate(180deg)
 }
 #third {
    
     background-repeat: no-repeat;
     background-image: url(../img/01.png);
-    transform:rotate(270deg)
+    transform:rotate(180deg)
 }
 #fourth
 {
     background-repeat: no-repeat;
     background-image:url(../img/11.png);
-    transform:rotate(270deg)
+    transform:rotate(180deg)
 }
 
 .box-container { 
