@@ -6,10 +6,7 @@ body {
     color: #e8f4ff;
     font-family: 'Open Sans', sans-serif;
     font-size: 13px;
-    background-image: url(../img/bgsky.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    background-color: black; /* Changed background to solid black */
 }
 
 h1, h2, h3, .h1, .h2, .h3, .heading {
