@@ -1,6 +1,6 @@
 var Exchange = function() {
 
-    let bugLeft = '1';                
+    let bugLeft = '4';                
     let gameOver = false;
     let userWon = false;
     let pauseTimer = false;
@@ -104,6 +104,7 @@ var Exchange = function() {
             // When the user clicks on New Game
             btnNewGame.on('click', function(){
                 sendReset()
+                localStorage.clear()
             });
 
             // When the user clicks on x, close the modal
