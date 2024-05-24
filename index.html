@@ -148,7 +148,7 @@
                                    7. Launch
                                 </li>
                              </ul>
-                             <button class="btn btn-xl btn-sf btnInstruct">cadarnhau cyfarwyddiadau</button>
+                             <button class="btn btn-xl btn-sf btnInstruct" onclick="toggleLanguage()">cadarnhau cyfarwyddiadau</button>
                             </div>
                         </div>
                         <div class="col-xs-6" style="padding-top:20px;width:100% !important">
@@ -279,6 +279,19 @@
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/jquery.easypiechart.min.js"></script>
         <script src="assets/js/core.js"></script>
+        <script>
+        var inWelsh = true;
+        function toggleLanguage() {
+            var btn = document.querySelector('.btnInstruct');
+            if (inWelsh) {
+                btn.textContent = 'Confirm Instructions';
+                inWelsh = false;
+            } else {
+                btn.textContent = 'cadarnhau cyfarwyddiadau';
+                inWelsh = true;
+            }
+        }
+        </script>
 
         <!-- Page JS Code -->
         <script>
