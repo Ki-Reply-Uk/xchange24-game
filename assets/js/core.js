@@ -1,8 +1,8 @@
 var Exchange = function() {
 
-    let bugLeft = '2';                
+    let bugLeft = '1';                
     let gameOver = false;
-    let userWon = true;
+    let userWon = false;
     let pauseTimer = false;
     
     var uiHelperEasyPieChart = function(){
