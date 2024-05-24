@@ -250,7 +250,7 @@ var Exchange = function() {
                 const fileContent = await Exchange.readJsonFile();
 
                 fileContent.forEach(item => {
-                    if(item["Email-Address"] === $('#email').val())
+                    if(item["Email-Address"] === localStorage.getItem('gamerDetails')["Email-Address"])
                     {
                         item["Time"] = Time;
                         item["Finished"] = Finished;
