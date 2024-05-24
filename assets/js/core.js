@@ -234,6 +234,7 @@ var Exchange = function() {
                 newuser["Time"] = "";
                 newuser["Email-Address"] = $('#email').val();
                 newuser["Finished"] = false;
+                localStorage.setItem('gamerDetails', newuser); // Store the user details in local storage
                 fileContent.push(newuser);
 
                 const fileUpdateResponse = await Exchange.updateJsonFile(fileContent);
