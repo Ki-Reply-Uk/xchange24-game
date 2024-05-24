@@ -157,6 +157,8 @@ var Exchange = function() {
             if (!pauseTimer) {
               // Get the target time from local storage
               const targetTime = localStorage.getItem('targetTime');
+              const userdetails=localStorage.getItem('gamerDetails')["Email-Address"]
+              console.log('userdetails',userdetails)
           
               if (targetTime) {
                 // Calculate the remaining time
