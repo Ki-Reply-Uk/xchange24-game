@@ -157,8 +157,7 @@ var Exchange = function() {
             if (!pauseTimer) {
               // Get the target time from local storage
               const targetTime = localStorage.getItem('targetTime');
-              const userdetails=localStorage.getItem('gamerDetails')["Email-Address"]
-              console.log('userdetails',userdetails)
+            
           
               if (targetTime) {
                 // Calculate the remaining time
@@ -236,7 +235,7 @@ var Exchange = function() {
                 newuser["Time"] = "";
                 newuser["Email-Address"] = $('#email').val();
                 newuser["Finished"] = false;
-                localStorage.setItem('gamerDetails', newuser); // Store the user details in local storage
+                localStorage.setItem('gamerEmail', newuser["Email-Address"]); // Store the user details in local storage
                 fileContent.push(newuser);
 
                 const fileUpdateResponse = await Exchange.updateJsonFile(fileContent);
@@ -250,9 +249,10 @@ var Exchange = function() {
         updateGamerTime : async function(Time, Finished){
             try{
                 const fileContent = await Exchange.readJsonFile();
+                gamerEmail=localStorage.getItem('gamerEmail');
 
                 fileContent.forEach(item => {
-                    if(item["Email-Address"] === localStorage.getItem('gamerDetails')["Email-Address"])
+                    if(item["Email-Address"] === gamerEmail)
                     {
                         item["Time"] = Time;
                         item["Finished"] = Finished;
