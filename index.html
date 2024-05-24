@@ -148,7 +148,7 @@
                                    7. Launch
                                 </li>
                              </ul>
-                             <button class="btn btn-xl btn-sf btnInstruct">cadarnhau cyfarwyddiadau</button>
+                             <button class="btn btn-xl btn-sf btnInstruct" id="confirmInstructionsButton">Confirm Instructions</button>
                             </div>
                         </div>
                         <div class="col-xs-6" style="padding-top:20px;width:100% !important">
@@ -284,7 +284,20 @@
         <script>
             jQuery(function(){
 
-                Exchange.initHelpers(['easy-pie-chart']);
+                // Function to set button text based on language preference
+               function setButtonText() {
+                   var userLang = navigator.language || navigator.userLanguage; 
+                   if (userLang.startsWith('en')) {
+                       document.getElementById('confirmInstructionsButton').textContent = 'Confirm Instructions';
+                   } else {
+                       // Default to English if no other language setting is detected
+                       document.getElementById('confirmInstructionsButton').textContent = 'Confirm Instructions';
+                   }
+               }
+
+               setButtonText(); // Set the button text on page load
+
+               Exchange.initHelpers(['easy-pie-chart']);
           
                 $('#bugCount').text(Exchange.bugLeft);
 
