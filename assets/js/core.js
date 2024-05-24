@@ -69,6 +69,7 @@ var Exchange = function() {
              {
                 $('#gamerName').text($('#name').val());
                 Exchange.startTimer();
+                Exchange.addNewGamerDetails();
                 newGameModal.hide(false);
                 sendStart()
              });   
