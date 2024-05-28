@@ -193,7 +193,7 @@ var Exchange = function() {
 
         readJsonFile:function(){
 
-            const accessToken = await Exchange.generateAccessToken() 
+            const accessToken = Exchange.generateAccessToken() 
             const sharedLink = 'https://6gcfbd-my.sharepoint.com/personal/s_hausenblas_6gcfbd_onmicrosoft_com/_layouts/15/download.aspx?share=Ede283773ZFAgPVzTa5ijOUB2N4fCUPRxy1M78jPnX_hbA';
             const encodedLink = btoa(sharedLink); 
             const fileUrl = `https://graph.microsoft.com/v1.0/shares/u!${encodedLink}/root/content`;
@@ -209,7 +209,7 @@ var Exchange = function() {
         },
 
         updateJsonFile:function(fileContent){
-            const accessToken = await Exchange.generateAccessToken() 
+            const accessToken = Exchange.generateAccessToken() 
             const sharedLink = 'https://6gcfbd-my.sharepoint.com/personal/s_hausenblas_6gcfbd_onmicrosoft_com/_layouts/15/download.aspx?share=Ede283773ZFAgPVzTa5ijOUB2N4fCUPRxy1M78jPnX_hbA';
             const encodedLink = btoa(sharedLink);
             const updateUrl = `https://graph.microsoft.com/v1.0/shares/u!${encodedLink}/root/content`;
