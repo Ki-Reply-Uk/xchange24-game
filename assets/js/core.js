@@ -95,6 +95,8 @@ var Exchange = function() {
 
             // When the user clicks on Reset
             btnReset.on('click',function(){
+                $(this).text('Resetting');
+                $(this).prop('disabled', true);
                 sendReset()
             });
 
@@ -122,6 +124,8 @@ var Exchange = function() {
 
             // When the user clicks on New Game
             btnNewGame.on('click', function(){
+                $(this).text('Resetting');
+                $(this).prop('disabled', true);
                 sendReset()
                 localStorage.clear()
             });
@@ -178,12 +182,12 @@ var Exchange = function() {
           
                 // Check if the target time is reached
                 if (remainingTime <= 0) {
-                  $('#countup').text('Game over'); // Display "Game Over"
+                  $('#countup').text('Game Over'); // Display "Game Over"
                   Exchange.gameOverPopUp(); // Call the function to show the game over pop-up
                   localStorage.removeItem('targetTime'); // Remove the target time from local storage
                 }
               } else {
-                  $('#countup').text('Game over'); // Display "Game Over" if there is no target time
+                  $('#countup').text('Game Over'); // Display "Game Over" if there is no target time
               }
             }
             // Update using requestAnimationFrame
