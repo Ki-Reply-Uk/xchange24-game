@@ -84,9 +84,10 @@ var Exchange = function() {
 
             // When the user clicks on Reset
             btnReset.on('click',function(){
-                $(this).text('Resetting');
+                $(this).text('Resetting...');
                 $(this).prop('disabled', true);
                 sendReset()
+                localStorage.clear()
             });
         },
 
@@ -110,7 +111,7 @@ var Exchange = function() {
 
             // When the user clicks on New Game
             btnNewGame.on('click', function(){
-                $(this).text('Resetting');
+                $(this).text('Resetting...');
                 $(this).prop('disabled', true);
                 sendReset()
                 localStorage.clear()
@@ -262,15 +263,18 @@ var Exchange = function() {
         updateGamerTime : async function(Time, Finished){
             try{
                 const fileContent = await Exchange.readJsonFile();
-                gamerEmail=localStorage.getItem('gamerEmail');
+                // gamerEmail=localStorage.getItem('gamerEmail');
 
-                fileContent.forEach(item => {
-                    if(item["Email-Address"] === gamerEmail)
-                    {
-                        item["Time"] = Time;
-                        item["Finished"] = Finished;
-                    }
-                });
+                // fileContent.forEach(item => {
+                //     if(item["Email-Address"] === gamerEmail)
+                //     {
+                //         item["Time"] = Time;
+                //         item["Finished"] = Finished;
+                //     }
+                // });
+                var item = fileContent[fileContent.length - 1];
+                item["Time"] = Time;
+                item["Finished"] = Finished;
                 const fileUpdateResponse = await Exchange.updateJsonFile(fileContent);
                 console.log('Gamer details updated successfully');
             }
