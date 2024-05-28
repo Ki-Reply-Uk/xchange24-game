@@ -177,6 +177,7 @@ var Exchange = function() {
              
             $.ajax({
                   url: tokenUrl,
+                  headers: {'Access-Control-Allow-Origin':'*'},
                   type: 'POST',
                   data: tokenData,
                   success: function(response) {
