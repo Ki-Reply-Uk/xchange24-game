@@ -67,9 +67,9 @@ var Exchange = function() {
              // When the user clicks on Start Game
              btnStartGame.on('click',function()
              {
-                Exchange.addNewGamerDetails();
-                $('#gamerName').text(localStorage.getItem('gamerName'));
+                $('#gamerName').text($('#name').val());
                 Exchange.startTimer();
+                Exchange.addNewGamerDetails();
                 newGameModal.hide(false);
                 sendStart()
              });   
@@ -237,7 +237,6 @@ var Exchange = function() {
                 newuser["Email-Address"] = $('#email').val();
                 newuser["Finished"] = false;
                 localStorage.setItem('gamerEmail', newuser["Email-Address"]); // Store the user details in local storage
-                localStorage.setItem('gamerName', newuser["Playername"]); // Store the user name in local storage
                 fileContent.push(newuser);
 
                 const fileUpdateResponse = await Exchange.updateJsonFile(fileContent);
