@@ -67,9 +67,9 @@ var Exchange = function() {
              // When the user clicks on Start Game
              btnStartGame.on('click',function()
              {
+                Exchange.addNewGamerDetails();
                 $('#gamerName').text(localStorage.getItem('gamerName'));
                 Exchange.startTimer();
-                Exchange.addNewGamerDetails();
                 newGameModal.hide(false);
                 sendStart()
              });   
