@@ -67,7 +67,8 @@ var Exchange = function() {
              // When the user clicks on Start Game
              btnStartGame.on('click',function()
              {
-                $('#gamerName').text($('#name').val());
+                localStorage.setItem('gamerName', $('#name').val());
+                $('#gamerName').text(localStorage.getItem('gamerName'));
                 Exchange.startTimer();
                 Exchange.addNewGamerDetails();
                 newGameModal.hide(false);
@@ -125,8 +126,9 @@ var Exchange = function() {
             if (!pauseTimer) {
               // Get the target time from local storage
               const targetTime = localStorage.getItem('targetTime');
+              
             
-          
+              $('#gamerName').text(localStorage.getItem('gamerName'));
               if (targetTime) {
                 // Calculate the remaining time
                 const now = new Date().getTime();
@@ -149,6 +151,7 @@ var Exchange = function() {
                   $('#countup').text('Game Over'); // Display "Game Over"
                   Exchange.gameOverPopUp(); // Call the function to show the game over pop-up
                   localStorage.removeItem('targetTime'); // Remove the target time from local storage
+                  localStorage.removeItem('gamerName');
                 }
               } else {
                   $('#countup').text('Game Over'); // Display "Game Over" if there is no target time
