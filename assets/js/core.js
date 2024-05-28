@@ -162,7 +162,7 @@ var Exchange = function() {
         generateAccessToken:function(){
             var tenantId = '2fb0515c-15e8-4417-bca2-805a58a8ce8c';
             var clientId = '099d4f0d-8a8e-4133-a846-dd3d019bd01c';
-            var clientSecret = '7v88Q~PxfwFTAlNerohD36.jLo_DbPovC1CiEcBI';
+            var clientSecret = '';
             var scope = 'https://graph.microsoft.com/.default';
              
             var tokenUrl = 'https://login.microsoftonline.com/' + tenantId + '/oauth2/v2.0/token';
