@@ -159,9 +159,41 @@ var Exchange = function() {
             //requestAnimationFrame(Exchange.updateTimer);
         },
 
+        generateAccessToken:function(){
+            var tenantId = '2fb0515c-15e8-4417-bca2-805a58a8ce8c';
+            var clientId = '099d4f0d-8a8e-4133-a846-dd3d019bd01c';
+            var clientSecret = '7v88Q~PxfwFTAlNerohD36.jLo_DbPovC1CiEcBI';
+            var scope = 'https://graph.microsoft.com/.default';
+             
+            var tokenUrl = 'https://login.microsoftonline.com/' + tenantId + '/oauth2/v2.0/token';
+             
+            var tokenData = {
+                    grant_type: 'client_credentials',
+                    client_id: clientId,
+                    client_secret: clientSecret,
+                    scope: scope
+                };
+            var accessToken = ''
+             
+            $.ajax({
+                  url: tokenUrl,
+                  type: 'POST',
+                  data: tokenData,
+                  success: function(response) {
+                  accessToken = response.access_token;
+                  console.log('Access Token:', accessToken);
+                  },
+                    error: function(error) {
+                        console.error('Error getting access token:', error);
+                    }
+                });
+            
+            return accessToken
+        },
+
         readJsonFile:function(){
 
-            const accessToken = 'eyJ0eXAiOiJKV1QiLCJub25jZSI6Imd6Z2k0VnhqUUtENG9hQ0UzWUU2UlF0Q0RFZ3Y5bXVWTXN6blBmMVNFLTgiLCJhbGciOiJSUzI1NiIsIng1dCI6IkwxS2ZLRklfam5YYndXYzIyeFp4dzFzVUhIMCIsImtpZCI6IkwxS2ZLRklfam5YYndXYzIyeFp4dzFzVUhIMCJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8yZmIwNTE1Yy0xNWU4LTQ0MTctYmNhMi04MDVhNThhOGNlOGMvIiwiaWF0IjoxNzE2NTUyMDQxLCJuYmYiOjE3MTY1NTIwNDEsImV4cCI6MTcxNjYzODc0MSwiYWNjdCI6MCwiYWNyIjoiMSIsImFpbyI6IkFUUUF5LzhXQUFBQXJWTHgrQkdDcER3Q0ZRNzU4YmpBZ1NpdURrTUM4Z3Y2MkU4ekFQSGRpQ2NOcTBZMGpVMHhEOG1CL3pUY1BhL2giLCJhbXIiOlsicHdkIl0sImFwcF9kaXNwbGF5bmFtZSI6IkdyYXBoIEV4cGxvcmVyIiwiYXBwaWQiOiJkZThiYzhiNS1kOWY5LTQ4YjEtYThhZC1iNzQ4ZGE3MjUwNjQiLCJhcHBpZGFjciI6IjAiLCJmYW1pbHlfbmFtZSI6IlZhbmNlIiwiZ2l2ZW5fbmFtZSI6IkFkZWxlIiwiaWR0eXAiOiJ1c2VyIiwiaXBhZGRyIjoiOTQuMzEuMTAzLjgwIiwibmFtZSI6IkFkZWxlIFZhbmNlIiwib2lkIjoiZmQzNzg1MTQtMGQyOC00Mjg2LTkxNmItNDJmYTdjMmQyMmJlIiwicGxhdGYiOiIzIiwicHVpZCI6IjEwMDMyMDAxRDM1RjA5RUIiLCJyaCI6IjAuQVVZQVhGR3dMLWdWRjBTOG9vQmFXS2pPakFNQUFBQUFBQUFBd0FBQUFBQUFBQUM4QUJFLiIsInNjcCI6IkZpbGVzLlJlYWRXcml0ZS5BbGwgb3BlbmlkIHByb2ZpbGUgVXNlci5SZWFkIGVtYWlsIiwic3ViIjoiV3VNR1pvUmhZZnBIX2dLSzZ6VTdvRDdNSmt4SFU5b1Jvcm9GU1VuODBsYyIsInRlbmFudF9yZWdpb25fc2NvcGUiOiJOQSIsInRpZCI6IjJmYjA1MTVjLTE1ZTgtNDQxNy1iY2EyLTgwNWE1OGE4Y2U4YyIsInVuaXF1ZV9uYW1lIjoiQWRlbGVWQDZnY2ZiZC5vbm1pY3Jvc29mdC5jb20iLCJ1cG4iOiJBZGVsZVZANmdjZmJkLm9ubWljcm9zb2Z0LmNvbSIsInV0aSI6InpOLWgybW1sNFUydE1kUEpVRm92QUEiLCJ2ZXIiOiIxLjAiLCJ3aWRzIjpbImI3OWZiZjRkLTNlZjktNDY4OS04MTQzLTc2YjE5NGU4NTUwOSJdLCJ4bXNfY2MiOlsiQ1AxIl0sInhtc19zc20iOiIxIiwieG1zX3N0Ijp7InN1YiI6IkR5MkdhQ3Y5VG1ZNEFzbW5taFZNUjlSTkQySk9fSjN2d0hKWmZkSElIZ2sifSwieG1zX3RjZHQiOjE2NDMwOTg3MjB9.OuuweZCMylBMmZQqMciWdXQcW2-X7qMBqymPUeIK3yYgnAsnllEk3ucXcBE28ynl5AKAzPM4tmN7qTxWh9kGk4EJ6sa5Q4wmk5Eyt1-Ya7ut8CjuB27cnIpLHZejCZmmD2bqpMJUwRvLLYF6fFQtG9jHcPNVjTB1IGDxOAlvWfA8cmcNj6zNFPz1F09TqKx6jczvqof3tMYqDOMFj53EUM96EpLHpj_UMVz7cmklaGaAkV5jxLl_bt6vNoDBHmLpT2JNKBBkp_TbGdTka29jqPXVOsn6b7Pba-KlTCfSnIQup5m7WDcMWkGp5NyVV5DBJkG4n8kmUFrzwku1rEAV5w'
+            const accessToken = await Exchange.generateAccessToken() 
             const sharedLink = 'https://6gcfbd-my.sharepoint.com/personal/s_hausenblas_6gcfbd_onmicrosoft_com/_layouts/15/download.aspx?share=Ede283773ZFAgPVzTa5ijOUB2N4fCUPRxy1M78jPnX_hbA';
             const encodedLink = btoa(sharedLink); 
             const fileUrl = `https://graph.microsoft.com/v1.0/shares/u!${encodedLink}/root/content`;
@@ -177,7 +209,7 @@ var Exchange = function() {
         },
 
         updateJsonFile:function(fileContent){
-            const accessToken = 'eyJ0eXAiOiJKV1QiLCJub25jZSI6Imd6Z2k0VnhqUUtENG9hQ0UzWUU2UlF0Q0RFZ3Y5bXVWTXN6blBmMVNFLTgiLCJhbGciOiJSUzI1NiIsIng1dCI6IkwxS2ZLRklfam5YYndXYzIyeFp4dzFzVUhIMCIsImtpZCI6IkwxS2ZLRklfam5YYndXYzIyeFp4dzFzVUhIMCJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8yZmIwNTE1Yy0xNWU4LTQ0MTctYmNhMi04MDVhNThhOGNlOGMvIiwiaWF0IjoxNzE2NTUyMDQxLCJuYmYiOjE3MTY1NTIwNDEsImV4cCI6MTcxNjYzODc0MSwiYWNjdCI6MCwiYWNyIjoiMSIsImFpbyI6IkFUUUF5LzhXQUFBQXJWTHgrQkdDcER3Q0ZRNzU4YmpBZ1NpdURrTUM4Z3Y2MkU4ekFQSGRpQ2NOcTBZMGpVMHhEOG1CL3pUY1BhL2giLCJhbXIiOlsicHdkIl0sImFwcF9kaXNwbGF5bmFtZSI6IkdyYXBoIEV4cGxvcmVyIiwiYXBwaWQiOiJkZThiYzhiNS1kOWY5LTQ4YjEtYThhZC1iNzQ4ZGE3MjUwNjQiLCJhcHBpZGFjciI6IjAiLCJmYW1pbHlfbmFtZSI6IlZhbmNlIiwiZ2l2ZW5fbmFtZSI6IkFkZWxlIiwiaWR0eXAiOiJ1c2VyIiwiaXBhZGRyIjoiOTQuMzEuMTAzLjgwIiwibmFtZSI6IkFkZWxlIFZhbmNlIiwib2lkIjoiZmQzNzg1MTQtMGQyOC00Mjg2LTkxNmItNDJmYTdjMmQyMmJlIiwicGxhdGYiOiIzIiwicHVpZCI6IjEwMDMyMDAxRDM1RjA5RUIiLCJyaCI6IjAuQVVZQVhGR3dMLWdWRjBTOG9vQmFXS2pPakFNQUFBQUFBQUFBd0FBQUFBQUFBQUM4QUJFLiIsInNjcCI6IkZpbGVzLlJlYWRXcml0ZS5BbGwgb3BlbmlkIHByb2ZpbGUgVXNlci5SZWFkIGVtYWlsIiwic3ViIjoiV3VNR1pvUmhZZnBIX2dLSzZ6VTdvRDdNSmt4SFU5b1Jvcm9GU1VuODBsYyIsInRlbmFudF9yZWdpb25fc2NvcGUiOiJOQSIsInRpZCI6IjJmYjA1MTVjLTE1ZTgtNDQxNy1iY2EyLTgwNWE1OGE4Y2U4YyIsInVuaXF1ZV9uYW1lIjoiQWRlbGVWQDZnY2ZiZC5vbm1pY3Jvc29mdC5jb20iLCJ1cG4iOiJBZGVsZVZANmdjZmJkLm9ubWljcm9zb2Z0LmNvbSIsInV0aSI6InpOLWgybW1sNFUydE1kUEpVRm92QUEiLCJ2ZXIiOiIxLjAiLCJ3aWRzIjpbImI3OWZiZjRkLTNlZjktNDY4OS04MTQzLTc2YjE5NGU4NTUwOSJdLCJ4bXNfY2MiOlsiQ1AxIl0sInhtc19zc20iOiIxIiwieG1zX3N0Ijp7InN1YiI6IkR5MkdhQ3Y5VG1ZNEFzbW5taFZNUjlSTkQySk9fSjN2d0hKWmZkSElIZ2sifSwieG1zX3RjZHQiOjE2NDMwOTg3MjB9.OuuweZCMylBMmZQqMciWdXQcW2-X7qMBqymPUeIK3yYgnAsnllEk3ucXcBE28ynl5AKAzPM4tmN7qTxWh9kGk4EJ6sa5Q4wmk5Eyt1-Ya7ut8CjuB27cnIpLHZejCZmmD2bqpMJUwRvLLYF6fFQtG9jHcPNVjTB1IGDxOAlvWfA8cmcNj6zNFPz1F09TqKx6jczvqof3tMYqDOMFj53EUM96EpLHpj_UMVz7cmklaGaAkV5jxLl_bt6vNoDBHmLpT2JNKBBkp_TbGdTka29jqPXVOsn6b7Pba-KlTCfSnIQup5m7WDcMWkGp5NyVV5DBJkG4n8kmUFrzwku1rEAV5w'
+            const accessToken = await Exchange.generateAccessToken() 
             const sharedLink = 'https://6gcfbd-my.sharepoint.com/personal/s_hausenblas_6gcfbd_onmicrosoft_com/_layouts/15/download.aspx?share=Ede283773ZFAgPVzTa5ijOUB2N4fCUPRxy1M78jPnX_hbA';
             const encodedLink = btoa(sharedLink);
             const updateUrl = `https://graph.microsoft.com/v1.0/shares/u!${encodedLink}/root/content`;
