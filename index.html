@@ -80,9 +80,9 @@
             <!-- Main Content -->
             <main id="page-main">
                 <!-- Columns -->
-                <div class="row">
+                <div class="row" id="dashboardRow">
                      
-                    <div class="col-lg-6 col-lg-push-3 overflow-hidden push-20">
+                    <div class="col-lg-6 col-lg-push-3 overflow-hidden push-20" id="middleCol">
                         <div class="box-container">
                             <div class="box box1"> 
                                 <div class="text"> 
@@ -119,7 +119,7 @@
                                     alt="Views"> 
                             </div>
                         </div>
-                        <div class="col-xs-6" style="padding-top:20px;width:100% !important">
+                        <div class="block" id="instructionsBlock">
                           <div class="instructions">
                             <div class="block-header overflow-hidden">
                                 <h2 class="block-title">Instructions</h2>
@@ -150,117 +150,97 @@
                              <button class="btn btn-xl btn-sf btnInstruct">cadarnhau cyfarwyddiadau</button>
                             </div>
                         </div>
-                        <div class="col-xs-6" style="padding-top:20px;width:100% !important">
-                           
-                        </div>
                     </div>
                     <!-- Left Column -->
                     <div class="col-sm-6 col-lg-3 col-lg-pull-6">
                         <!-- Environment -->
-                        <div class="block">
-                            <div class="block-header overflow-hidden">
-                                <h2 class="block-title">Environment</h2>
+                        <div class="block" id="environmentBlock">
+                            <div class="environment">
+                                <div class="block-header overflow-hidden">
+                                    <h2 class="block-title">Environment</h2>
+                                </div>
+                                <div class="block-content">
+                                    <div class="row items-push overflow-hidden">
+                                        <div class="col-xs-4 text-center">
+                                            <div class="js-pie-chart pie-chart" data-percent="50" data-line-width="5" data-size="65" data-bar-color="rgba(255, 255, 255, .2)" data-track-color="rgba(255, 255, 255, .1)">
+                                                <span class="font-s16 font-w600">PSI</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-8">
+                                            <div class="text-uppercase font-w600 text-white-op">Pressure</div>
+                                            <div class="font-s36 font-w300">15.65</div>
+                                        </div>
+                                    </div>
+                                    <div class="row items-push overflow-hidden">
+                                        <div class="col-xs-4 text-center">
+                                            <div class="js-pie-chart pie-chart" data-percent="29" data-line-width="5" data-size="65" data-bar-color="rgba(255, 255, 255, .2)" data-track-color="rgba(255, 255, 255, .1)">
+                                                <span class="font-s16 font-w600">%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-8">
+                                            <div class="text-uppercase font-w600 text-white-op">Oxygen</div>
+                                            <div class="font-s36 font-w300">29.15</div>
+                                        </div>
+                                    </div>
+                                    <div class="row items-push overflow-hidden">
+                                        <div class="col-xs-4 text-center" >
+                                            <div class="js-pie-chart pie-chart" data-percent="60" data-line-width="5" data-size="65" data-bar-color="rgba(255, 255, 255, .2)" data-track-color="rgba(255, 255, 255, .1)">
+                                                <span class="font-s16 font-w600">C&deg;</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-8" >
+                                            <div class="text-uppercase font-w600 text-white-op">Temperature</div>
+                                            <div class="font-s36 font-w300">5.3</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="block-content">
-                                <div class="row items-push overflow-hidden">
-                                    <div class="col-xs-4 text-center">
-                                        <div class="js-pie-chart pie-chart" data-percent="50" data-line-width="5" data-size="65" data-bar-color="rgba(255, 255, 255, .2)" data-track-color="rgba(255, 255, 255, .1)">
-                                            <span class="font-s16 font-w600">PSI</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-8">
-                                        <div class="text-uppercase font-w600 text-white-op">Pressure</div>
-                                        <div class="font-s36 font-w300">15.65</div>
-                                    </div>
-                                </div>
-                                <div class="row items-push overflow-hidden">
-                                    <div class="col-xs-4 text-center">
-                                        <div class="js-pie-chart pie-chart" data-percent="29" data-line-width="5" data-size="65" data-bar-color="rgba(255, 255, 255, .2)" data-track-color="rgba(255, 255, 255, .1)">
-                                            <span class="font-s16 font-w600">%</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-8">
-                                        <div class="text-uppercase font-w600 text-white-op">Oxygen</div>
-                                        <div class="font-s36 font-w300">29.15</div>
-                                    </div>
-                                </div>
-                                <div class="row items-push overflow-hidden">
-                                    <div class="col-xs-4 text-center" >
-                                        <div class="js-pie-chart pie-chart" data-percent="60" data-line-width="5" data-size="65" data-bar-color="rgba(255, 255, 255, .2)" data-track-color="rgba(255, 255, 255, .1)">
-                                            <span class="font-s16 font-w600">C&deg;</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-8" >
-                                        <div class="text-uppercase font-w600 text-white-op">Temperature</div>
-                                        <div class="font-s36 font-w300">5.3</div>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
                         <!-- END Environment -->
 
                         <!-- Planets -->
-                        <div class="block">
-                            <div class="block-header overflow-hidden">
-                                <h2 class="block-title">Planets</h2>
-                            </div>
-                            <div class="block-content">
-                                <div class="row items-push overflow-hidden">
-                                    <div class="col-xs-4 text-center " data-class="animated fadeInLeft" data-timeout="100">
-                                        <div class="js-pie-chart pie-chart" data-percent="100" data-line-width="20" data-size="45" data-bar-color="rgba(255, 255, 255, .2)" data-track-color="#c07635">
-                                            <span class="font-s16 font-w600"></span>
+                        <div class="block" id="planetsBlock">
+                            <div class="planets">
+                                <div class="block-header overflow-hidden">
+                                    <h2 class="block-title">Planets</h2>
+                                </div>
+                                <div class="block-content">
+                                    <div class="row items-push overflow-hidden">
+                                        <div class="col-xs-4 text-center " data-class="animated fadeInLeft" data-timeout="100">
+                                            <div class="js-pie-chart pie-chart" data-percent="100" data-line-width="20" data-size="45" data-bar-color="rgba(255, 255, 255, .2)" data-track-color="#c07635">
+                                                <span class="font-s16 font-w600"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-8 "  data-class="animated fadeInRight" data-timeout="400">
+                                            <div class="text-uppercase font-w600 text-white-op">Mars</div>
+                                            <div class="font-s36 font-w300">1.67 <span class="font-s16 font-w400 text-crystal">L.Y.</span></div>
                                         </div>
                                     </div>
-                                    <div class="col-xs-8 "  data-class="animated fadeInRight" data-timeout="400">
-                                        <div class="text-uppercase font-w600 text-white-op">Mars</div>
-                                        <div class="font-s36 font-w300">1.67 <span class="font-s16 font-w400 text-crystal">L.Y.</span></div>
-                                    </div>
-                                </div>
-                                <div class="row items-push overflow-hidden">
-                                    <div class="col-xs-4 text-center " data-class="animated fadeInLeft" data-timeout="200">
-                                        <div class="js-pie-chart pie-chart" data-percent="100" data-line-width="22" data-size="50" data-bar-color="rgba(255, 255, 255, .2)" data-track-color="#3673cc">
-                                            <span class="font-s16 font-w600"></span>
+                                    <div class="row items-push overflow-hidden">
+                                        <div class="col-xs-4 text-center " data-class="animated fadeInLeft" data-timeout="200">
+                                            <div class="js-pie-chart pie-chart" data-percent="100" data-line-width="22" data-size="50" data-bar-color="rgba(255, 255, 255, .2)" data-track-color="#3673cc">
+                                                <span class="font-s16 font-w600"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-8 " data-class="animated fadeInRight" data-timeout="500">
+                                            <div class="text-uppercase font-w600 text-white-op">Earth</div>
+                                            <div class="font-s36 font-w300">1.62 <span class="font-s16 font-w400 text-crystal">L.Y.</span></div>
                                         </div>
                                     </div>
-                                    <div class="col-xs-8 " data-class="animated fadeInRight" data-timeout="500">
-                                        <div class="text-uppercase font-w600 text-white-op">Earth</div>
-                                        <div class="font-s36 font-w300">1.62 <span class="font-s16 font-w400 text-crystal">L.Y.</span></div>
-                                    </div>
-                                </div>
-                                <div class="row items-push overflow-hidden">
-                                    <div class="col-xs-4 text-center " data-class="animated fadeInLeft" data-timeout="300">
-                                        <div class="js-pie-chart pie-chart" data-percent="100" data-line-width="30" data-size="70" data-bar-color="rgba(255, 255, 255, .2)" data-track-color="#f7c880">
-                                            <span class="font-s16 font-w600"></span>
+                                    <div class="row items-push overflow-hidden">
+                                        <div class="col-xs-4 text-center " data-class="animated fadeInLeft" data-timeout="300">
+                                            <div class="js-pie-chart pie-chart" data-percent="100" data-line-width="30" data-size="70" data-bar-color="rgba(255, 255, 255, .2)" data-track-color="#f7c880">
+                                                <span class="font-s16 font-w600"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-8 "data-class="animated fadeInRight" data-timeout="600">
+                                            <div class="text-uppercase font-w600 text-white-op">Saturn</div>
+                                            <div class="font-s36 font-w300">2.22 <span class="font-s16 font-w400 text-crystal">L.Y.</span></div>
                                         </div>
                                     </div>
-                                    <div class="col-xs-8 "data-class="animated fadeInRight" data-timeout="600">
-                                        <div class="text-uppercase font-w600 text-white-op">Saturn</div>
-                                        <div class="font-s36 font-w300">2.22 <span class="font-s16 font-w400 text-crystal">L.Y.</span></div>
-                                    </div>
+                                    
                                 </div>
-                                <div class="row items-push overflow-hidden">
-                                    <div class="col-xs-4 text-center" data-class="animated fadeInLeft" data-timeout="800">
-                                        <div class="js-pie-chart pie-chart" data-percent="100" data-line-width="26" data-size="60" data-bar-color="rgba(255, 255, 255, .2)" data-track-color="#ff6347">
-                                            <span class="font-s16 font-w600"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-8" data-class="animated fadeInRight" data-timeout="1100">
-                                        <div class="text-uppercase font-w600 text-white-op">Venus</div>
-                                        <div class="font-s36 font-w300">0.72 <span class="font-s16 font-w400 text-crystal">L.Y.</span></div>
-                                    </div>
-                                </div>
-                                <div class="row items-push overflow-hidden">
-                                    <div class="col-xs-4 text-center" data-class="animated fadeInLeft" data-timeout="700">
-                                        <div class="js-pie-chart pie-chart" data-percent="100" data-line-width="15" data-size="35" data-bar-color="rgba(255, 255, 255, .2)" data-track-color="#d4a017">
-                                            <span class="font-s16 font-w600"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-8" data-class="animated fadeInRight" data-timeout="1000">
-                                        <div class="text-uppercase font-w600 text-white-op">Mercury</div>
-                                        <div class="font-s36 font-w300">0.39 <span class="font-s16 font-w400 text-crystal">L.Y.</span></div>
-                                    </div>
-                                </div>
-                                
                             </div>
                         </div>
                         <!-- END Planets -->
@@ -268,10 +248,12 @@
                     <!-- END Left Column -->
 
                     <!-- Right Column -->
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="timer">Bugs remaining: <span id="bugCount">3</span></div>
-                        <div class="timer-countdown flikr" id="countup">
-                            00:00:00
+                    <div class="col-sm-6 col-lg-3" style="justify-content: space-evenly;">
+                        <div class="row">
+                            <div class="timer">Bugs remaining: <span id="bugCount">3</span></div>
+                            <div class="timer-countdown flikr" id="countup">
+                                00:00:00
+                            </div>
                         </div>
                         <!-- <div class="timer1">Spacecraft Design1</div> -->
                         <div class="space">    
@@ -288,7 +270,7 @@
                 
             </main>
             <!-- Page Footer -->
-            <footer class="block">
+            <footer class="block" id="footerBlock">
                 <div class="block-content block-content-full font-s12 text-center ">
                     2024 &copy; KI Reply
                 </div>
