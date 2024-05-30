@@ -233,56 +233,56 @@ ul span{
 }
 
 .space {
-    /* width: 100%;
-    height: 100%; */
-    position: absolute;
-    transform: translateY(50%);
-    /* margin-left: 60px !important; */
+    display: grid;
+    aspect-ratio: 1/1;
+    grid-template-columns: 1fr 1fr; /* Creates 2 columns of equal width */
+    grid-template-rows: 1fr 1fr;    /* Creates 2 rows of equal height */
+    gap: 10px;                      /* Adjusts the space between grid items */
     margin: 10px;
+    margin-right: 40px;
+    flex-grow: 1;
 }
 
 
 .divb
 {
-    float: left;
-    width: 10vw;
-    height: 10vw;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; 
 }
+
 
 #first{
     background-repeat: no-repeat;
     clear: both;
     background-image: url(../img/00.png);
-    background-size: contain;
+    background-size: cover;
     transform:rotate(270deg);
-    padding: 5px;
     background-origin: content-box;
 }
 #second
 {
     background-repeat: no-repeat;
     background-image: url(../img/10.png);
-    background-size: contain;
+    background-size: cover;
     transform:rotate(360deg);
-    padding: 5px;
     background-origin: content-box;
 }
 #third {
    
     background-repeat: no-repeat;
     background-image: url(../img/01.png);
-    background-size: contain;
+    background-size: cover;
     transform:rotate(360deg);
-    padding: 5px;
     background-origin: content-box;
 }
 #fourth
 {
     background-repeat: no-repeat;
     background-image:url(../img/11.png);
-    background-size: contain;
+    background-size: cover;
     transform:rotate(360deg);
-    padding: 5px;
     background-origin: content-box;
 }
 
@@ -295,8 +295,8 @@ ul span{
     } 
 
 .box { 
-    height: 100px; 
-    width: 280px; 
+    height: 100%; 
+    width: 45%; 
     border-radius: 20px; 
     box-shadow: 3px 3px 10px rgba(0, 30, 87, 0.751); 
     padding: 10px; 
