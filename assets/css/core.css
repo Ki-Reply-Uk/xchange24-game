@@ -1,6 +1,5 @@
 html, body {
     height: 100%;
-    min-height: 100vh;
 }
 
 body {
@@ -91,25 +90,23 @@ ul span{
 
 .timer
 {
-    /* float:right; */
+    float:right;
     margin-right: 40px;
     font-family: 'Raleway', sans-serif;
     font-size: 40px;
-    text-align: right;
 }
 
 .timer-countdown
 {
-    /* float:right; */
+    float:right;
     margin-right: 40px;
     font-family: 'Cousine', sans-serif;
     font-size: 40px;
-    text-align: right;
 }
 
 .timer1
 {
-    /* float:right; */
+    float:right;
     margin-top: 40px;
     font-family: 'Raleway', sans-serif;
     font-size: 40px;
@@ -122,10 +119,7 @@ ul span{
 
 /* Main Layout */
 #page-container {
-    display: flex;
-    flex-direction: column;
     min-width: 320px;
-    min-height: 100vh;
     overflow: hidden;
 }
 
@@ -158,12 +152,6 @@ ul span{
 
 #page-main {
     padding: 0px 20px 1px;
-    flex: 1;
-}
-
-.col-sm-6, .col-lg-3 {
-    display: flex;
-    flex-direction: column;
 }
 
 /* Blocks */
@@ -201,7 +189,6 @@ ul span{
     padding: 20px 20px 1px;
     max-width: 100%;
     overflow-x: visible;
-    font-family: 'Raleway', sans-serif;
 }
 
 .block-content.block-content-full {
@@ -233,57 +220,49 @@ ul span{
 }
 
 .space {
-    display: grid;
-    aspect-ratio: 1/1;
-    grid-template-columns: 1fr 1fr; /* Creates 2 columns of equal width */
-    grid-template-rows: 1fr 1fr;    /* Creates 2 rows of equal height */
-    gap: 10px;                      /* Adjusts the space between grid items */
-    margin: 10px;
-    margin-right: 40px;
-    flex-grow: 1;
+    width: 400px;
+    height: 500px;
+    position: absolute;
+    transform: translateY(50%);
+    margin-left: 60px !important;
 }
 
 
 .divb
 {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden; 
+    float: left;
+    width: 128px;
+    height: 128px;
+    background:#c07635;
 }
 
-
-#first{
+#bottom-left{
     background-repeat: no-repeat;
     clear: both;
     background-image: url(../img/00.png);
-    background-size: cover;
-    transform:rotate(270deg);
-    background-origin: content-box;
+    background-size: contain;
+    transform:rotate(270deg)
 }
-#second
+#top-left
 {
     background-repeat: no-repeat;
     background-image: url(../img/10.png);
-    background-size: cover;
-    transform:rotate(360deg);
-    background-origin: content-box;
+    background-size: contain;
+    transform:rotate(360deg)
 }
-#third {
+#bottom-right {
    
     background-repeat: no-repeat;
     background-image: url(../img/01.png);
-    background-size: cover;
-    transform:rotate(360deg);
-    background-origin: content-box;
+    background-size: contain;
+    transform:rotate(360deg)
 }
-#fourth
+#top-right
 {
     background-repeat: no-repeat;
     background-image:url(../img/11.png);
-    background-size: cover;
-    transform:rotate(360deg);
-    background-origin: content-box;
+    background-size: contain;
+    transform:rotate(360deg)
 }
 
 .box-container { 
@@ -295,8 +274,8 @@ ul span{
     } 
 
 .box { 
-    height: 100%; 
-    width: 45%; 
+    height: 100px; 
+    width: 280px; 
     border-radius: 20px; 
     box-shadow: 3px 3px 10px rgba(0, 30, 87, 0.751); 
     padding: 10px; 
