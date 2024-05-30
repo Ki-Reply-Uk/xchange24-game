@@ -67,17 +67,21 @@ ul span{
     background: transparent;
 }
 
-.btn.btn-sf:hover,
-.btn.btn-sf:focus {
-    color: rgba(255, 255, 255, 1);
-    border-color: rgba(255, 255, 255, 1);
-    outline: 0;
+.btn, .popUpButton, .btnInstruct {
+    background-color: #007bff; /* Consistent blue background */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    transition: background-color 0.3s;
 }
 
-.btn.btn-sf:active {
-    color: #fff;
-    border-color: #fff;
-    background: rgba(255, 255, 255, .15);
+.btn:hover, .popUpButton:hover, .btnInstruct:hover {
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
 .btnInstruct
