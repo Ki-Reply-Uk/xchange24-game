@@ -104,9 +104,8 @@ ul span{
 
 .timer1
 {
-    margin-top: 40px;
-    font-family: 'Raleway', sans-serif;
-    font-size: 40px;
+    height: 100%;
+    margin-bottom: 20px;
 }
 
 .flikr
@@ -120,7 +119,7 @@ ul span{
     flex-direction: column;
     min-width: 320px;
     height: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
 }
 
@@ -235,12 +234,16 @@ ul span{
     overflow-y: hidden;
 }
 
+#buttonsContainer {
+    height: 50%;
+    padding: 2%;
+}
+
 #instructionsBlock {
-    margin: 20px;
-    height: 67%;
+    height: 47.5%;
     min-height: 508px;
     overflow-y: hidden;
-    vertical-align: middle;
+    margin-bottom: 20px;
 }
 
 .li-instruct
@@ -316,7 +319,7 @@ ul span{
     align-items: center; 
     flex-wrap: wrap; 
     gap: 20px; 
-    height: 15%;
+    height: 50%;
     } 
 
 .box { 
