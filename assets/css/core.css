@@ -243,14 +243,15 @@ ul span{
     vertical-align: middle;
 }
 
-.li-instruct
-{
+.li-instruct {
+    display: block;
     text-align: left;
     line-height: 1.8;
     margin-bottom: 1.5rem;
     list-style-type: none;
     font-family: 'Raleway', sans-serif;
-    font-size:20px
+    font-size: 20px;
+    padding-left: 20px;
 }
 
 #footerBlock {
