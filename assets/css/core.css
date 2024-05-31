@@ -3,10 +3,10 @@ html, body {
 }
 
 body {
-    color: #e8f4ff;
+    color: #333; /* Darker text color for better contrast on light background */
     font-family: 'Open Sans', sans-serif;
     font-size: 13px;
-    background: radial-gradient(#ced4fd, #03051e);
+    background: #fff; /* White background */
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -134,7 +134,7 @@ ul span{
 }
 
 #page-container.modern:before {
-    background-color: rgba(0, 22, 41, .75);
+    background-color: rgba(255, 255, 255, .75); /* Lighter overlay for a cleaner look */
 }
 
 #page-container.vintage:before {
@@ -179,8 +179,8 @@ ul span{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly; 
-    background-color: rgba(0, 0, 0, .15);
-    border-left: 4px solid rgba(255, 255, 255, .1);
+    background-color: rgba(255, 255, 255, .9); /* Lighter blocks for better readability */
+    border-left: 4px solid rgba(0, 0, 0, .1); /* Darker border for contrast */
 }
 
 .block-header {
@@ -348,8 +348,8 @@ ul span{
     border: 4px solid rgba(255, 255, 255, .1); 
     } 
 .box3 { 
-    background-color: rgba(0, 0, 0, .15);
-    border: 4px solid rgba(255, 255, 255, .1);
+    background-color: rgba(255, 255, 255, .9); /* Consistent lighter background for all boxes */
+    border: 4px solid rgba(0, 0, 0, .1); /* Darker borders for better visibility */
     } 
 .box4 { 
     background-color:pink;
