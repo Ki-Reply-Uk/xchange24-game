@@ -510,3 +510,18 @@ input[type="email"] {
 
 .overflow-hidden { overflow: hidden; }
 .visibility-hidden { visibility: hidden; }
+.li-instruct {
+    font-size: 16px; /* Default font size for smaller devices */
+}
+
+@media (min-width: 768px) {
+    .li-instruct {
+        font-size: 18px; /* Medium font size for tablets */
+    }
+}
+
+@media (min-width: 992px) {
+    .li-instruct {
+        font-size: 20px; /* Larger font size for desktops */
+    }
+}
