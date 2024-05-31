@@ -8,7 +8,7 @@ var Exchange = function() {
     }
     if (localStorage.getItem('keepTime') !== null) {
         console.log('keepTime value:', localStorage.getItem('keepTime'));
-        $('#countup').html(localStorage.getItem('keepTime') + "<br><small>Waiting for deployment</small>"); // Update the timre value with the value before the refresh
+        $('#countup').html(localStorage.getItem('keepTime') + "<br><span style='font-size: 0.6em;'>Waiting for<br>deployment...</span>"); // Update the timre value with the value before the refresh
     }
 
     
