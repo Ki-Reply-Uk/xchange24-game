@@ -98,22 +98,20 @@ var Exchange = function() {
             });
         },
 
-        gameWonModal: function(timePassed){
+        gameWonModal: function(){
             
             var successModal = $('#successModal'); // Get the modal
             var span = $('.close'); // Get the <span> element that closes the modal
             var btnNewGame = $('#btnNewGame');
 
-            // Convert timePassed from milliseconds to minutes, seconds, and milliseconds
-            var minutes = Math.floor(timePassed / 60000);
-            var seconds = ((timePassed % 60000) / 1000).toFixed(0);
-            var milliseconds = timePassed % 1000;
+            // Calculate time taken to complete the game
+            var startMinutes = 10;
+            var time_left = localStorage.getItem('keepTime');
+            
+            var time_taken = Exchange.calculateTimeDifference(time_left, startMinutes);
 
-            // Pad minutes and seconds with leading zeros if they are less than 10
-            minutes = minutes < 10 ? '0' + minutes : minutes;
-            seconds = seconds < 10 ? '0' + seconds : seconds;
             successModal.show();
-            $('#gameWonMessage').text("Game won - time taken: " + minutes + ":" + seconds + ":" + milliseconds);
+            $('#gameWonMessage').text("Game won - time taken: " + time_taken);
 
 
             // When the user clicks on New Game
@@ -123,6 +121,29 @@ var Exchange = function() {
                 sendReset()
                 localStorage.clear()
             });
+        },
+
+        calculateTimeDifference: function(time_left, startMinutes) {
+            // Convert the time_left to milliseconds
+            var timeParts = time_left.split(':');
+            var timeMillis = (+timeParts[0]) * 60 * 1000 + (+timeParts[1]) * 1000 + (+timeParts[2]);
+        
+            // Convert start time to milliseconds
+            var startMillis = startMinutes * 60 * 1000;
+        
+            // Calculate the difference in milliseconds
+            var diffMillis = startMillis - timeMillis;
+        
+            // Convert the difference in milliseconds back to the format minutes:seconds:milliseconds
+            var diffMinutes = Math.floor(diffMillis / (60 * 1000));
+            diffMillis -= diffMinutes * 60 * 1000;
+            var diffSeconds = Math.floor(diffMillis / 1000);
+            diffMillis -= diffSeconds * 1000;
+        
+            // Create the resulting string and fill the minutes, seconds and milliseconds to two digits
+            var t = diffMinutes.toString().padStart(2, '0') + ":" + diffSeconds.toString().padStart(2, '0') + ":" + Math.floor(diffMillis / 10).toString().padStart(2, '0');
+        
+            return t;
         },
 
         startTimer:function(){
