@@ -241,7 +241,7 @@ ul span{
 
 #instructionsBlock {
     height: 47.5%;
-    /* min-height: 508px; */
+    min-height: 508px;
     overflow-y: hidden;
     margin-bottom: 20px;
 }
