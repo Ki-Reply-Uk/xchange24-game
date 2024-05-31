@@ -510,3 +510,6 @@ input[type="email"] {
 
 .overflow-hidden { overflow: hidden; }
 .visibility-hidden { visibility: hidden; }
+.responsive-text {
+    font-size: calc(12px + 1vw);
+}
