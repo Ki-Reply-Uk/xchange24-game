@@ -5,7 +5,7 @@ html, body {
 body {
     color: #e8f4ff;
     font-family: 'Open Sans', sans-serif;
-    font-size: 13px;
+    font-size: 16px; /* Increased font size for better readability */
     background: radial-gradient(#ced4fd, #03051e);
     background-size: cover;
     background-attachment: fixed;
