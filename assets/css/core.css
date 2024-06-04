@@ -68,17 +68,16 @@ ul span{
 }
 
 .btn.btn-sf:hover,
-.btn.btn-sf:focus {
-    color: rgba(255, 255, 255, 1);
-    border-color: rgba(255, 255, 255, 1);
-    outline: 0;
+.btn.btn-sf:focus,
+.btn.btn-sf:active,
+.btn.btn-xl,
+.btnInstruct,
+.popUpButton {
+    background-color: #4CAF50; /* Consistent green background */
+    color: white; /* White text for better contrast */
+    border: 1px solid #4CAF50; /* Same color border */
 }
 
-.btn.btn-sf:active {
-    color: #fff;
-    border-color: #fff;
-    background: rgba(255, 255, 255, .15);
-}
 
 .btnInstruct
 {
