@@ -5,7 +5,7 @@ html, body {
 body {
     color: #e8f4ff;
     font-family: 'Open Sans', sans-serif;
-    font-size: 13px;
+    font-size: 22px;
     background: radial-gradient(#ced4fd, #03051e);
     background-size: cover;
     background-attachment: fixed;
@@ -23,7 +23,7 @@ ul span{
     text-decoration: underline;
     font-family: 'Raleway', sans-serif;
     
-    font-size: 30px;
+    font-size: 42px;
 }
 
 .topic
@@ -59,7 +59,7 @@ ul span{
     text-align: left;
     font-weight: 600;
     font-family: 'Raleway', sans-serif;
-    font-size: 16px;
+    font-size: 22px;
     color: rgba(255, 255, 255, .75);
     border: 2px solid rgba(255, 255, 255, .25);
     border-left-width: 4px;
@@ -91,14 +91,14 @@ ul span{
 .timer
 {
     font-family: 'Raleway', sans-serif;
-    font-size: 40px;
+    font-size: 56px;
     text-align: right;
 }
 
 .timer-countdown
 {
     font-family: 'Cousine', sans-serif;
-    font-size: 40px;
+    font-size: 56px;
     text-align: right;
 }
 
@@ -198,10 +198,11 @@ ul span{
 }
 
 .block-title {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 400;
     font-family: 'Raleway', sans-serif;
     color: rgba(255, 255, 255, .25);
+    font-size: 28px;
     text-transform: uppercase;
     line-height: 1.2;
 }
@@ -253,7 +254,7 @@ ul span{
     margin-bottom: 1.5rem;
     list-style-type: none;
     font-family: 'Raleway', sans-serif;
-    font-size:20px
+    font-size:28px
 }
 
 #footerBlock {
@@ -483,15 +484,16 @@ input[type="email"] {
 
 /* Helpers */
 .font-s12 { font-size: 12px !important; }
-.font-s13 { font-size: 13px !important; }
-.font-s14 { font-size: 14px !important; }
-.font-s16 { font-size: 16px !important; }
-.font-s18 { font-size: 18px !important; }
-.font-s20 { font-size: 20px !important; }
-.font-s24 { font-size: 24px !important; }
-.font-s36 { font-size: 36px !important; }
-.font-s48 { font-size: 48px !important; }
-.font-s64 { font-size: 64px !important; }
+.font-s12 { font-size: 15px !important; }
+.font-s13 { font-size: 16px !important; }
+.font-s14 { font-size: 17px !important; }
+.font-s16 { font-size: 19px !important; }
+.font-s18 { font-size: 21px !important; }
+.font-s20 { font-size: 23px !important; }
+.font-s24 { font-size: 27px !important; }
+.font-s36 { font-size: 39px !important; }
+.font-s48 { font-size: 51px !important; }
+.font-s64 { font-size: 67px !important; }
 
 .font-w200 { font-weight: 200 !important; }
 .font-w300 { font-weight: 300 !important; }
