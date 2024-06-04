@@ -31,13 +31,13 @@
                     <form id="contactForm">
                         <label for="name">Name:</label>
                         <input type="text" id="name" name="name" required>
-    
+
                         <label for="company">Company Name:</label>
                         <input type="text" id="company" name="company" required>
-    
+
                         <label for="email">Email:</label>
                         <input type="email" id="email" name="email" required>
-    
+
                         <button id="btnStartGame" type="button" class="popUpButton" disabled>Start Game</button>
                     </form>
                 </div>
@@ -81,7 +81,7 @@
             <main id="page-main">
                 <!-- Columns -->
                 <div class="row" id="dashboardRow">
-                     
+
                     <div class="col-lg-6 col-lg-push-3 overflow-hidden push-20" id="middleCol">
                         <div id="buttonsContainer">
                             <div class="box-container">
@@ -124,7 +124,7 @@
                         <div class="block" id="instructionsBlock">
                           <div class="instructions">
                             <div class="block-header overflow-hidden">
-                                <h2 class="block-title">Instructions</h2>
+                                <h2 class="block-title" data-i18n="instructions">Instructions</h2>
                             </div>
                             <div class="block-content">
                                 <ul style="padding-top:5px">
@@ -150,7 +150,7 @@
                                        7. Launch
                                     </li>
                                  </ul>
-                                 <button class="btn btn-xl btn-sf btnInstruct">cadarnhau cyfarwyddiadau</button>
+                                 <button class="btn btn-xl btn-sf btnInstruct" data-i18n="confirm_instructions">Confirm Instructions</button>
                                 </div>
                             </div>
                         </div>
@@ -161,7 +161,7 @@
                         <div class="block" id="environmentBlock">
                             <div class="environment">
                                 <div class="block-header overflow-hidden">
-                                    <h2 class="block-title">Environment</h2>
+                                    <h2 class="block-title" data-i18n="environment">Environment</h2>
                                 </div>
                                 <div class="block-content">
                                     <div class="row items-push overflow-hidden">
@@ -199,7 +199,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
                         <!-- END Environment -->
 
@@ -207,7 +207,7 @@
                         <div class="block" id="planetsBlock">
                             <div class="planets">
                                 <div class="block-header overflow-hidden">
-                                    <h2 class="block-title">Planets</h2>
+                                    <h2 class="block-title" data-i18n="planets">Planets</h2>
                                 </div>
                                 <div class="block-content">
                                     <div class="row items-push overflow-hidden">
@@ -243,7 +243,7 @@
                                             <div class="font-s36 font-w300">2.22 <span class="font-s16 font-w400 text-crystal">L.Y.</span></div>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -267,13 +267,13 @@
                                 <div class="divb" id="bottom-right"></div>                         
                             </div> 
                         </div>
-                        
+
                     </div>
                     <!-- END Right Column -->
                 </div>
                 <!-- END Columns -->
 
-                
+
             </main>
             <!-- Page Footer -->
             <footer class="block" id="footerBlock">
@@ -291,19 +291,51 @@
         <script src="assets/js/jquery.easypiechart.min.js"></script>
         <script src="assets/js/core.js"></script>
 
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var userLang = navigator.language || navigator.userLanguage;
+                var textElements = document.querySelectorAll('[data-i18n]');
+                textElements.forEach(function(element) {
+                    var key = element.getAttribute('data-i18n');
+                    element.textContent = translations[userLang][key] || translations['en'][key] || element.textContent;
+                });
+            });
+            var translations = {
+                'en': {
+                    'instructions': 'Instructions',
+                    'environment': 'Environment',
+                    'planets': 'Planets',
+                    'game_over': 'Game Over!',
+                    'game_won': 'Game Won!',
+                    'start_game': 'Start Game',
+                    'reset_game': 'Reset and Start New Game',
+                    'confirm_instructions': 'Confirm Instructions'
+                },
+                'es': {
+                    'instructions': 'Instrucciones',
+                    'environment': 'Ambiente',
+                    'planets': 'Planetas',
+                    'game_over': 'Â¡Juego Terminado!',
+                    'game_won': 'Â¡Juego Ganado!',
+                    'start_game': 'Iniciar Juego',
+                    'reset_game': 'Reiniciar y Comenzar Nuevo Juego',
+                    'confirm_instructions': 'Confirmar Instrucciones'
+                }
+            };
+        </script>
         <!-- Page JS Code -->
         <script>
             jQuery(function(){
 
                 Exchange.initHelpers(['easy-pie-chart']);
-          
+
                 $('#bugCount').text(Exchange.bugLeft);
 
                 if(localStorage.getItem('targetTime') == undefined && !Exchange.gameOver && !Exchange.userWon)
                 {
                     Exchange.newGamePopup();
                 }
-                
+
                 if(localStorage.getItem('targetTime') !== null && !Exchange.userWon)
                 {
                     Exchange.updateTimer();
@@ -328,7 +360,7 @@
                     localStorage.clear();
                 }              
             });
-             
+
         </script>
     </body>
 </html>
