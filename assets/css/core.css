@@ -25,6 +25,10 @@ ul span{
     
     font-size: 30px;
 }
+ul li {
+    text-align: left;
+    list-style-position: inside;
+}
 
 .topic
 {
