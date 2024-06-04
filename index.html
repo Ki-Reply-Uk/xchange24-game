@@ -297,7 +297,14 @@
 
                 Exchange.initHelpers(['easy-pie-chart']);
           
-                $('#bugCount').text(Exchange.bugLeft);
+                // Update bug count dynamically from system status
+        function updateBugCount() {
+            var bugCount = Exchange.getCurrentBugCount(); // Assume this function fetches the current bug count
+            $('#bugCount').text(bugCount);
+        }
+
+        updateBugCount(); // Initial update on page load
+        setInterval(updateBugCount, 1000); // Update every second to keep the count accurate
 
                 if(localStorage.getItem('targetTime') == undefined && !Exchange.gameOver && !Exchange.userWon)
                 {
