@@ -82,7 +82,10 @@ ul span{
 
 .btnInstruct
 {
-    float: right;
+    float: none;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
     border-radius: 15px;
     margin-right:50px;
     width:auto;
