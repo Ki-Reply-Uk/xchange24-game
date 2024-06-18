@@ -432,19 +432,20 @@ input[type="email"] {
     font-family: 'Raleway', sans-serif;
 }
 
-.popUpButton {
+ .popUpButton {
     width: 100%;
     padding: 10px;
-    background-color: black;
+    background-color: #62d0f0; /* Changed to match the text-header color for consistency */
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-family: 'Raleway', sans-serif;
+    transition: background-color 0.3s ease;
 }
 
-.popUpButton:hover {
-    background-color: lightgray;
+ .popUpButton:hover {
+    background-color: #4095c6; /* Darker shade of the main color for hover effect */
 }
 
 /* Easy Pie Chart */
