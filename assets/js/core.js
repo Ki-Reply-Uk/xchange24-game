@@ -1,7 +1,7 @@
 var Exchange = function() {
 
     let bugLeft = '4';                
-    let gameOver = false;
+    let gameOver = true;
     let userWon = false;
     if (localStorage.getItem('pauseTimer') === null) {
         localStorage.setItem('pauseTimer', 'false');
