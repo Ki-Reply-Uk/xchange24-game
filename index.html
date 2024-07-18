@@ -291,44 +291,5 @@
         <script src="assets/js/jquery.easypiechart.min.js"></script>
         <script src="assets/js/core.js"></script>
 
-        <!-- Page JS Code -->
-        <script>
-            jQuery(function(){
-
-                Exchange.initHelpers(['easy-pie-chart']);
-          
-                $('#bugCount').text(Exchange.bugLeft);
-
-                if(localStorage.getItem('targetTime') == undefined && !Exchange.gameOver && !Exchange.userWon)
-                {
-                    Exchange.newGamePopup();
-                }
-                
-                if(localStorage.getItem('targetTime') !== null && !Exchange.userWon)
-                {
-                    Exchange.updateTimer();
-                }
-
-                if(localStorage.getItem('targetTime') !== null && Exchange.userWon)
-                {
-                    // Calculate the time that has already passed
-                    var targetTime = parseInt(localStorage.getItem('targetTime'));
-                    var currentTime = new Date().getTime();
-                    var timePassed = currentTime - targetTime + 10 * 60 * 1000; // Add the original 10 minutes to get the time passed
-
-                    Exchange.pauseCounter();
-                    Exchange.updateGamerTime(timePassed, true);
-                    Exchange.gameWonModal(timePassed);
-                }
-
-                if(Exchange.gameOver)
-                {
-                    Exchange.updateGamerTime("",true);
-                    Exchange.gameOverPopUp();
-                    localStorage.clear();
-                }              
-            });
-             
-        </script>
     </body>
 </html>
